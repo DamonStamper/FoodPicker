@@ -1,3 +1,3 @@
-DB = SQL on linux? (compatable with future Dockerization?)
-API = Flask?
-UI = Vue?
+DB = SQL on Linux? (compatable with future Dockerization?)  
+API = Flask?  
+UI = Vue?  
