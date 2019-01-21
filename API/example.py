@@ -1,5 +1,10 @@
+import os
+
 from flask import request, url_for
 from flask_api import FlaskAPI, status, exceptions
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FlaskAPI(__name__)
 
@@ -53,4 +58,4 @@ def notes_detail(key):
 
 
 if __name__ == "__main__":
-    app.run(debug=True,port=9999)
+    app.run(debug=True,port=os.environ['LISTENING_PORT'])
