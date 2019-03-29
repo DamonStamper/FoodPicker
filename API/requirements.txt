@@ -1,2 +1,4 @@
 Flask-API==1.1
-python-dotenv==0.10.1
+flask_sqlalchemy==2.3.2
+marshmallow-sqlalchemy==0.16.1
+flask-marshmallow==0.9.0

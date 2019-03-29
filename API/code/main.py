@@ -83,7 +83,7 @@ def user_delete(id):
     return user_schema.jsonify(user)
 
 if __name__ == "__main__":
-    if "LISTENING_PORT" in os.environ:
-        app.run(debug=True,port=os.environ['LISTENING_PORT'])
+    if "DEBUG" in os.environ:
+        app.run(debug=os.environ['DEBUG'],port=os.environ['LISTENING_PORT'])
     else:
-        app.run(debug=True,port=80)
+        app.run(debug=False,port=os.environ['LISTENING_PORT'])
