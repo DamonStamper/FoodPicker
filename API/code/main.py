@@ -30,6 +30,9 @@ user_schema = UserSchema()
 users_schema = UserSchema(many=True)
 
 
+# endpoint to check health of applicaion
+@app.route("/user/<id>", methods=["GET"])
+
 # endpoint to create new user
 @app.route("/user", methods=["POST"])
 def add_user():
@@ -84,6 +87,6 @@ def user_delete(id):
 
 if __name__ == "__main__":
     if "DEBUG" in os.environ:
-        app.run(debug=os.environ['DEBUG'],port=os.environ['LISTENING_PORT'])
+        app.run(host='0.0.0.0',debug=os.environ['DEBUG'],port=80)
     else:
-        app.run(debug=False,port=os.environ['LISTENING_PORT'])
+        app.run(host='0.0.0.0',debug=False,port=80)

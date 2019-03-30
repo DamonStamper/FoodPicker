@@ -6,8 +6,3 @@ services:
     container_name: foodpicker_API
     ports:
       - "80:80"
-    networks:
-      - front-tier
-
-networks:
-  front-tier:
