@@ -23,13 +23,16 @@ test: up ## Test the containers
 	curl ${ip}:80
 
 build: ## Build the containers
-	docker-compose build
+	docker-compose build 
 
 cleanbuild: ## Build the containers without reusing any previously built layers.
 	docker-compose build --no-cache
 
 up: build ## Start the containers
 	docker-compose up -d
+
+hotload: ## Start the containers in "hotload" so that changes to code do not require container rebuild
+	docker-compose -f docker-compose.yml -f docker-compose.hotload.yml up -d 
 
 stop: ## Stop the containers
 	docker-compose stop
